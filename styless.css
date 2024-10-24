@@ -1,0 +1,128 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #dad9d9;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #faf2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+    text-align: center;
+    color: #0c5528;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+.user-input, .expense-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(70% - 10px);
+    margin-right: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    padding: 10px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.expense-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Add some space above */
+}
+
+.expense-buttons button {
+    flex: 1; /* Make buttons take equal space */
+    margin: 0 5px; /* Add some spacing between buttons */
+}
+
+h2 {
+    margin: 20px 0;
+    color: #121312;
+    animation: fadeIn 0.5s ease-in;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#expense-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#expense-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #e7f3fe;
+    border-left: 5px solid #05f31d;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards; /* Animate fade in for list items */
+}
+
+#expense-list li:nth-child(odd) {
+    background-color: #45f618; /* Alternate background for better visibility */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .user-input, .expense-input {
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+        margin-right: 0;
+    }
+}
